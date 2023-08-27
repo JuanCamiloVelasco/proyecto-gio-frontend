@@ -6,4 +6,4 @@
 5- npm i react-icons 
 6- npm install --save sweetalert
 7- npm install -D tailwindcss
->> npx tailwindcss init
+   npx tailwindcss init
