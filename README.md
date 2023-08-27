@@ -1,4 +1,4 @@
-# Lista comandor React
+# Lista comandos React
 1- npm install 
 2- npm install react-router-dom --save
 3- npm install axios --save
