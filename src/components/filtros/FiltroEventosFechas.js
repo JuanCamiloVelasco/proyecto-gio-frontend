@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import swal from 'sweetalert';
 
 const FiltroEventosFechas = () => {
 
@@ -18,7 +19,17 @@ const FiltroEventosFechas = () => {
 
     const FiltroFechas = (e, fechaInicial, fechaFinal) => {
         e.preventDefault();
-        navigate(`/filtroFechasList/${fechaInicial}/${fechaFinal}`);
+        if(fechaFinal !== "" && fechaFinal !== ""){
+            navigate(`/filtroFechasList/${fechaInicial}/${fechaFinal}`);
+        } else {
+            swal({
+                title: "Seleccione el rago de fechas a filtrar",
+                text: "Todos los campos son obligatorios",
+                icon: "warning",
+                button: "aceptar"
+            })
+        }
+        
     };
 
   return (

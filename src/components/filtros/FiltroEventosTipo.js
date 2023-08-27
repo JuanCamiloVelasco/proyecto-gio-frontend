@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import swal from 'sweetalert';
 
 const FiltroEventosTipo = () => {
 
@@ -17,7 +18,16 @@ const FiltroEventosTipo = () => {
 
     const FiltroTipo = (e, tipo) => {
         e.preventDefault();
-        navigate(`/filtroTipoList/${tipo}`);
+        if(tipo !== "") {
+            navigate(`/filtroTipoList/${tipo}`);
+        } else {
+            swal({
+                title: "Seleccione el tipo de evento a filtrar",
+                text: "Todos los campos son obligatorios",
+                icon: "warning",
+                button: "aceptar"
+            })
+        }
     };
 
   return (
